@@ -13,6 +13,8 @@ public class Ejercicio2_masEjPOO {
         System.out.println(cuenta.getMonthlyInterestRate(cuenta.getBalance()));
 
 
+        System.out.println(cuenta.withdraw(cuenta.getBalance()));
+
 
 
 
@@ -71,7 +73,7 @@ static class Account{
         Scanner sc = new Scanner(System.in);
         System.out.println("Ingrese el valor del ratio: ");
         double rate = sc.nextDouble();
-        double interest = balance * rate;
+        double interest = balance * (1+(rate/100));
         return interest;
     }
     public int IngresarId(){
@@ -81,15 +83,15 @@ static class Account{
         id = sc.nextInt();
         return id;
     }
-    public void withdraw(double balance){
+    public double withdraw(double balance){
         Scanner sc = new Scanner(System.in);
         System.out.println("El balance actual es: " +balance+"$");
         System.out.println("Ingrese la cantidad que desea retirar: ");
         double cantidad = sc.nextDouble();
-        double resta=cantidad-balance;
+        double resta=balance-cantidad;
         balance =resta;
         System.out.println("Su ceunta ahora tiene un balance de: " +balance+"$");
-
+        return balance;
     }
     public double deposit(double balance){
         Scanner sc = new Scanner(System.in);
@@ -101,9 +103,6 @@ static class Account{
 
         return balance;
     }
-
-
-
 
 
 
