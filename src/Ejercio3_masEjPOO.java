@@ -72,6 +72,7 @@ public class Ejercio3_masEjPOO {
 
 
 
+
     }
 
     static class Fan{
